@@ -18,15 +18,25 @@ import org.junit.jupiter.api.Test;
  * 2. Sort the list alphabetically from a -> z.
  *    Use the .collect(Collectors.toList()) stream method to return a list
  */
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class StreamSorter {
 
     int[] sortArray(int[] arr) {
-        return null;
+        return Arrays.stream(arr)   // Convert array to IntStream
+            .sorted()                // Sort the elements
+            .toArray();              // Convert the stream back to an array
     }
 
     List<String> sortList(List<String> list) {
-        return null;
+        return list.stream()           // Convert list to Stream
+            .sorted()                  // Sort the elements alphabetically
+            .collect(Collectors.toList());  // Collect the sorted elements into a list
     }
+
+
     
     // =================== DO NOT MODIFY THE CODE BELOW ======================
     
